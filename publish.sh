@@ -16,7 +16,7 @@ if [ -z "$WEEK" ]; then
   exit 1
 fi
 
-REPORT_SRC="D:/Reports/weekly-market-wrap-${WEEK}.html"
+REPORT_SRC="$HOME/Reports/weekly-market-wrap-${WEEK}.html"
 REPORT_DEST="$REPO_DIR/reports/${WEEK}.html"
 
 # 複製報告文件到倉庫
@@ -24,7 +24,7 @@ if [ ! -f "$REPORT_DEST" ]; then
   if [ -f "$REPORT_SRC" ]; then
     mkdir -p "$REPO_DIR/reports"
     cp "$REPORT_SRC" "$REPORT_DEST"
-    echo "Copied report from D:/Reports/"
+    echo "Copied report from $HOME/Reports/"
   else
     echo "Error: No report found at $REPORT_SRC"
     exit 1
