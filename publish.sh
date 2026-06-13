@@ -50,7 +50,7 @@ node -e "
 git add reports/ reports.json
 git diff --staged --quiet || {
   git commit -m "Add weekly market wrap for ${WEEK} (${PERIOD})"
-  git push
+  git push origin main
 }
 
 echo ""
