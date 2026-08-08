@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>第32週 每週市場回顧 Weekly Market Wrap | 2026.08.03—08.07</title>
+<style>
+  :root {
+    --title: #1B3A5C; --accent: #2E75B6; --head-bg: #D5E8F0;
+    --green: #1E8449; --red: #C0392B; --border: #d9dee3; --gray: #666;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", "Microsoft YaHei", Arial, sans-serif;
+    background: #eceff1; color: #1a1a1a; font-size: 12px; line-height: 1.45;
+  }
+  .page {
+    width: 210mm; min-height: 296mm; margin: 8px auto; padding: 11mm 12mm 16mm;
+    background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,.18); position: relative;
+  }
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; page-break-after: always; }
+    .page:last-child { page-break-after: auto; }
+  }
+  @page { size: A4; margin: 0; }
+
+  /* ───── 報告頭 ───── */
+  .report-head { display: flex; align-items: baseline; gap: 14px; border-bottom: 3px solid var(--title); padding-bottom: 8px; margin-bottom: 14px; }
+  .week-tag { background: var(--title); color: #fff; font-weight: 700; font-size: 14px; padding: 3px 10px; border-radius: 3px; }
+  .report-head h1 { font-size: 22px; color: var(--title); font-weight: 800; }
+  .report-head h1 .en { font-weight: 600; color: var(--accent); font-size: 17px; }
+  .report-head .range { margin-left: auto; font-size: 14px; color: var(--gray); font-weight: 600; }
+
+  h2.sec { font-size: 15px; color: var(--title); font-weight: 800; margin: 14px 0 8px; padding-left: 8px; border-left: 4px solid var(--accent); }
+  h3.sub { font-size: 12.5px; color: var(--accent); font-weight: 700; margin: 10px 0 6px; }
+
+  /* ───── 市場總覽表 ───── */
+  .tables-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; }
+  .mkt h4 { font-size: 12px; color: var(--title); margin: 4px 0 3px; font-weight: 800; }
+  table { width: 100%; border-collapse: collapse; }
+  .mkt table th, .mkt table td { border: 1px solid var(--border); padding: 2.5px 6px; font-size: 11px; text-align: right; }
+  .mkt table th { background: var(--head-bg); color: var(--title); font-weight: 700; }
+  .mkt table th:first-child, .mkt table td:first-child { text-align: left; }
+  td.up { color: var(--green); font-weight: 700; }
+  td.dn { color: var(--red); font-weight: 700; }
+  td.na { color: #999; }
+
+  /* ───── 熱力圖 ───── */
+  .hm-band { font-size: 12px; font-weight: 800; color: #fff; background: var(--accent); display: inline-block; padding: 2px 10px; border-radius: 2px; margin: 10px 0 6px; }
+  .tile-row { display: flex; flex-wrap: wrap; gap: 4px; }
+  .tile { flex: 1 1 60px; min-width: 58px; border-radius: 3px; padding: 5px 4px 4px; text-align: center; }
+  .tile .t-name { font-size: 10.5px; font-weight: 700; white-space: nowrap; }
+  .tile .t-tick { font-size: 9px; opacity: .85; }
+  .tile .t-pct { font-size: 11.5px; font-weight: 800; margin-top: 1px; }
+
+  .theme-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; margin-top: 4px; }
+  .theme { border: 1px solid var(--border); border-radius: 4px; padding: 5px 7px 6px; }
+  .theme-head { font-size: 11px; font-weight: 800; color: var(--title); margin-bottom: 4px; display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+  .bench { font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 2px; }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 3px; }
+  .chip { font-size: 10px; font-weight: 700; padding: 2.5px 6px; border-radius: 2px; white-space: nowrap; }
+
+  .legend { font-size: 9.5px; color: var(--gray); margin-top: 8px; border-top: 1px dashed var(--border); padding-top: 4px; }
+
+  /* ───── 第二頁 宏觀 ───── */
+  .macro-block { border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 4px; padding: 8px 12px; margin-bottom: 10px; }
+  .macro-block h3 { font-size: 13px; color: var(--title); margin-bottom: 5px; }
+  .macro-block li { list-style: none; font-size: 11.5px; margin: 4px 0; padding-left: 14px; position: relative; }
+  .macro-block li::before { content: "▸"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+  /* ───── 第三頁 表格 ───── */
+  .flow table th, .flow table td { border: 1px solid var(--border); padding: 3px 7px; font-size: 11px; }
+  .flow table th { background: var(--head-bg); color: var(--title); font-weight: 700; }
+  .flow .summary { font-size: 11px; background: #f4f8fb; border: 1px solid var(--border); border-radius: 3px; padding: 5px 9px; margin: 5px 0 10px; }
+  .flow .summary b { color: var(--title); }
+  td.c { text-align: center; }
+  td.r { text-align: right; }
+  tr.total td { background: #f4f8fb; font-weight: 800; }
+
+  .cal table th, .cal table td { border: 1px solid var(--border); padding: 4px 7px; font-size: 10.5px; vertical-align: top; }
+  .cal table th { background: var(--head-bg); color: var(--title); }
+  .cal td.day { font-weight: 800; color: var(--title); white-space: nowrap; }
+
+  .risks { margin-top: 8px; }
+  .risks li { list-style: none; font-size: 11.5px; margin: 4px 0; }
+  .risks b { color: var(--red); }
+
+  .src { font-size: 9px; color: var(--gray); margin-top: 12px; border-top: 1px dashed var(--border); padding-top: 5px; line-height: 1.5; }
+
+  .pagefoot { position: absolute; bottom: 6mm; left: 12mm; right: 12mm; display: flex; justify-content: space-between; font-size: 9px; color: var(--gray); border-top: 1px solid var(--border); padding-top: 3px; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ 第 1 頁 ═══════════════ -->
+<div class="page">
+  <div class="report-head">
+    <span class="week-tag">第32週</span>
+    <h1>每週市場回顧 <span class="en">Weekly Market Wrap</span></h1>
+    <span class="range">2026.08.03 — 08.07</span>
+  </div>
+
+  <h2 class="sec">一、主要市場總覽</h2>
+  <div class="tables-grid">
+    <div class="mkt"><h4>美股</h4>
+      <table><tr><th>指數/品種</th><th>上週五</th><th>本週五</th><th>週漲跌幅</th></tr>
+        <tr><td>S&amp;P 500</td><td>7,489.72</td><td>7,757.64</td><td class="up">+3.58%</td></tr>
+        <tr><td>NASDAQ</td><td>25,373.85</td><td>26,690.62</td><td class="up">+5.19%</td></tr>
+        <tr><td>Dow Jones</td><td>52,485.03</td><td>54,036.93</td><td class="up">+2.96%</td></tr>
+        <tr><td>Russell 2000</td><td>2,931.34</td><td>3,034.49</td><td class="up">+3.52%</td></tr>
+        <tr><td>費城半導體（SOXX）</td><td>504.89</td><td>543.27</td><td class="up">+7.60%</td></tr>
+      </table></div>
+    <div class="mkt"><h4>商品</h4>
+      <table><tr><th>指數/品種</th><th>上週五</th><th>本週五</th><th>週漲跌幅</th></tr>
+        <tr><td>黃金</td><td>4,049.10</td><td>4,401.30</td><td class="up">+8.70%</td></tr>
+        <tr><td>白銀</td><td>57.59</td><td>63.80</td><td class="up">+10.78%</td></tr>
+        <tr><td>WTI原油</td><td>84.67</td><td>77.08</td><td class="dn">-8.96%</td></tr>
+        <tr><td>布蘭特</td><td>90.12</td><td>82.27</td><td class="dn">-8.71%</td></tr>
+        <tr><td>銅</td><td>6.4360</td><td>6.5850</td><td class="up">+2.31%</td></tr>
+      </table></div>
+    <div class="mkt"><h4>A股</h4>
+      <table><tr><th>指數/品種</th><th>上週五</th><th>本週五</th><th>週漲跌幅</th></tr>
+        <tr><td>上證指數</td><td>3,832.26</td><td>3,940.04</td><td class="up">+2.81%</td></tr>
+        <tr><td>深證成指</td><td>13,578.93</td><td>14,311.01</td><td class="up">+5.39%</td></tr>
+        <tr><td>滬深300 ²</td><td class="na">—</td><td>4,694.44</td><td class="na">數據暫不可得</td></tr>
+        <tr><td>創業板指 ²</td><td class="na">—</td><td>3,563.12</td><td class="na">數據暫不可得</td></tr>
+        <tr><td>中證新能源</td><td colspan="2" class="na" style="text-align:center">數據暫不可得</td><td class="na">—</td></tr>
+      </table></div>
+    <div class="mkt"><h4>外匯</h4>
+      <table><tr><th>指數/品種</th><th>上週五</th><th>本週五</th><th>週漲跌幅</th></tr>
+        <tr><td>DXY</td><td>101.38</td><td>99.60</td><td class="dn">-1.75%</td></tr>
+        <tr><td>USD/CNY（人行中間價）</td><td>6.7894</td><td>6.7904</td><td class="up">+0.01%</td></tr>
+        <tr><td>USD/JPY</td><td>160.18</td><td>158.41</td><td class="dn">-1.11%</td></tr>
+        <tr><td>EUR/USD</td><td>1.1524</td><td>1.1525</td><td class="up">+0.01%</td></tr>
+        <tr><td>GBP/USD</td><td>1.3461</td><td>1.3455</td><td class="dn">-0.04%</td></tr>
+      </table></div>
+    <div class="mkt"><h4>港股</h4>
+      <table><tr><th>指數/品種</th><th>上週五</th><th>本週五</th><th>週漲跌幅</th></tr>
+        <tr><td>恒生指數</td><td>25,884.43</td><td>25,668.03</td><td class="dn">-0.84%</td></tr>
+        <tr><td>恒生科技 ²</td><td>4,829.42</td><td>4,858.29</td><td class="up">+0.60%</td></tr>
+        <tr><td>恒生國企</td><td>8,612.15</td><td>8,531.58</td><td class="dn">-0.94%</td></tr>
+        <tr><td>恒生地產</td><td colspan="2" class="na" style="text-align:center">數據暫不可得</td><td class="na">—</td></tr>
+      </table></div>
+    <div class="mkt"><h4>加密貨幣</h4>
+      <table><tr><th>指數/品種</th><th>上週五</th><th>本週五</th><th>週漲跌幅</th></tr>
+        <tr><td>Bitcoin</td><td>63,460.90</td><td>64,979.01</td><td class="up">+2.39%</td></tr>
+        <tr><td>Ethereum</td><td>1,858.26</td><td>1,917.38</td><td class="up">+3.18%</td></tr>
+      </table></div>
+  </div>
+
+  <h2 class="sec">板塊漲跌熱力圖</h2>
+
+  <div class="hm-band">S&amp;P 500 GICS Sector Overview</div>
+  <div class="tile-row">
+    <div class="tile" data-pct="7.20"><div class="t-name">科技</div><div class="t-tick">XLK</div><div class="t-pct">+7.20%</div></div>
+    <div class="tile" data-pct="4.82"><div class="t-name">原材料</div><div class="t-tick">XLB</div><div class="t-pct">+4.82%</div></div>
+    <div class="tile" data-pct="3.25"><div class="t-name">非必需消費</div><div class="t-tick">XLY</div><div class="t-pct">+3.25%</div></div>
+    <div class="tile" data-pct="2.97"><div class="t-name">工業</div><div class="t-tick">XLI</div><div class="t-pct">+2.97%</div></div>
+    <div class="tile" data-pct="2.78"><div class="t-name">通訊服務</div><div class="t-tick">XLC</div><div class="t-pct">+2.78%</div></div>
+    <div class="tile" data-pct="1.93"><div class="t-name">醫療保健</div><div class="t-tick">XLV</div><div class="t-pct">+1.93%</div></div>
+    <div class="tile" data-pct="1.16"><div class="t-name">金融</div><div class="t-tick">XLF</div><div class="t-pct">+1.16%</div></div>
+    <div class="tile" data-pct="0.08"><div class="t-name">必需消費</div><div class="t-tick">XLP</div><div class="t-pct">+0.08%</div></div>
+    <div class="tile" data-pct="-0.20"><div class="t-name">房地產</div><div class="t-tick">XLRE</div><div class="t-pct">-0.20%</div></div>
+    <div class="tile" data-pct="-1.67"><div class="t-name">公用事業</div><div class="t-tick">XLU</div><div class="t-pct">-1.67%</div></div>
+    <div class="tile" data-pct="-3.44"><div class="t-name">能源</div><div class="t-tick">XLE</div><div class="t-pct">-3.44%</div></div>
+  </div>
+
+  <div class="hm-band">US Watchlist Theme Groups</div>
+  <div class="theme-grid">
+    <div class="theme">
+      <div class="theme-head">能源/核能 &nbsp;清潔能源/稀土/鈾
+        <span class="bench" data-pct="-3.44">XLE -3.44%</span><span class="bench" data-pct="4.27">ICLN +4.27%</span></div>
+      <div class="chip-row">
+        <span class="chip" data-pct="0.0">GEV +0.0%</span><span class="chip" data-pct="16.6">SMR +16.6%</span>
+        <span class="chip" data-pct="24.7">OKLO +24.7%</span><span class="chip" data-pct="-5.1">VST -5.1%</span>
+        <span class="chip" data-pct="2.7">CEG +2.7%</span><span class="chip" data-pct="6.6">BE +6.6%</span>
+        <span class="chip" data-pct="-1.9">BLDP -1.9%</span><span class="chip" data-pct="23.5">MP +23.5%</span>
+        <span class="chip" data-pct="29.3">USAR +29.3%</span><span class="chip" data-pct="12.7">CCJ +12.7%</span>
+        <span class="chip" data-pct="8.2">LEU +8.2%</span>
+      </div>
+    </div>
+    <div class="theme">
+      <div class="theme-head">半導體/AI芯片 &nbsp;科技巨頭
+        <span class="bench" data-pct="7.60">SOXX +7.60%</span><span class="bench" data-pct="7.20">XLK +7.20%</span></div>
+      <div class="chip-row">
+        <span class="chip" data-pct="-0.2">SNDK -0.2%</span><span class="chip" data-pct="6.6">MU +6.6%</span>
+        <span class="chip" data-pct="16.6">MRVL +16.6%</span><span class="chip" data-pct="7.4">ALAB +7.4%</span>
+        <span class="chip" data-pct="11.6">NVDA +11.6%</span><span class="chip" data-pct="3.9">TSM +3.9%</span>
+        <span class="chip" data-pct="7.6">MSFT +7.6%</span><span class="chip" data-pct="1.1">AMZN +1.1%</span>
+        <span class="chip" data-pct="6.4">META +6.4%</span><span class="chip" data-pct="-0.9">GOOG -0.9%</span>
+        <span class="chip" data-pct="1.4">AAPL +1.4%</span><span class="chip" data-pct="5.6">TSLA +5.6%</span>
+      </div>
+    </div>
+    <div class="theme">
+      <div class="theme-head">光通信/基建 <span class="bench" data-pct="2.97">XLI +2.97%</span></div>
+      <div class="chip-row">
+        <span class="chip" data-pct="44.2">COHR +44.2%</span><span class="chip" data-pct="24.7">LITE +24.7%</span>
+        <span class="chip" data-pct="12.8">VRT +12.8%</span><span class="chip" data-pct="3.4">CAT +3.4%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hm-band">A股 GICS Sector Overview</div>
+  <div class="tile-row">
+    <div class="tile" data-pct="12.62"><div class="t-name">電子</div><div class="t-pct">+12.62%</div></div>
+    <div class="tile" data-pct="10.95"><div class="t-name">有色金屬</div><div class="t-pct">+10.95%</div></div>
+    <div class="tile" data-pct="9.71"><div class="t-name">機械設備</div><div class="t-pct">+9.71%</div></div>
+    <div class="tile" data-pct="9.69"><div class="t-name">通信</div><div class="t-pct">+9.69%</div></div>
+    <div class="tile" data-pct="8.13"><div class="t-name">建築材料</div><div class="t-pct">+8.13%</div></div>
+    <div class="tile" data-pct="-1.31"><div class="t-name">美容護理</div><div class="t-pct">-1.31%</div></div>
+    <div class="tile" data-pct="-1.61"><div class="t-name">非銀金融</div><div class="t-pct">-1.61%</div></div>
+    <div class="tile" data-pct="-2.14"><div class="t-name">家用電器</div><div class="t-pct">-2.14%</div></div>
+    <div class="tile" data-pct="-2.76"><div class="t-name">食品飲料</div><div class="t-pct">-2.76%</div></div>
+    <div class="tile" data-pct="-3.70"><div class="t-name">銀行</div><div class="t-pct">-3.70%</div></div>
+  </div>
+
+  <div class="hm-band">A股港股觀察清單主題分組</div>
+  <div class="theme-grid">
+    <div class="theme">
+      <div class="theme-head">新能源電池產業鏈 <span class="bench" data-pct="3.86">成分股均值 +3.86%</span></div>
+      <div class="chip-row">
+        <span class="chip" data-pct="-1.8">寧德時代 -1.8%</span><span class="chip" data-pct="2.9">廈鎢新能 +2.9%</span>
+        <span class="chip" data-pct="4.4">龍蟠科技 +4.4%</span><span class="chip" data-pct="2.1">恩捷股份 +2.1%</span>
+        <span class="chip" data-pct="1.5">星源材質 +1.5%</span><span class="chip" data-pct="-5.1">尚太科技 -5.1%</span>
+        <span class="chip" data-pct="24.1">中一科技 +24.1%</span>
+      </div>
+    </div>
+    <div class="theme">
+      <div class="theme-head">光伏/儲能 <span class="bench" data-pct="10.44">陽光電源所在板塊 +10.44%</span></div>
+      <div class="chip-row"><span class="chip" data-pct="10.4">陽光電源 +10.4%</span></div>
+    </div>
+    <div class="theme">
+      <div class="theme-head">AI算力/光通信 <span class="bench" data-pct="14.39">成分股均值 +14.39%</span></div>
+      <div class="chip-row">
+        <span class="chip" data-pct="6.3">新易盛 +6.3%</span><span class="chip" data-pct="2.0">中際旭創 +2.0%</span>
+        <span class="chip" data-pct="34.9">天孚通信 +34.9%</span>
+      </div>
+    </div>
+    <div class="theme">
+      <div class="theme-head">半導體/電子 <span class="bench" data-pct="19.55">成分股均值 +19.55%</span></div>
+      <div class="chip-row">
+        <span class="chip" data-pct="29.1">鼎泰高科 +29.1%</span><span class="chip" data-pct="19.4">芯原股份 +19.4%</span>
+        <span class="chip" data-pct="10.2">兆易創新 +10.2%</span>
+      </div>
+    </div>
+    <div class="theme">
+      <div class="theme-head">數據中心/散熱 <span class="bench" data-pct="17.81">英維克所在板塊 +17.81%</span></div>
+      <div class="chip-row"><span class="chip" data-pct="17.8">英維克 +17.8%</span></div>
+    </div>
+    <div class="theme">
+      <div class="theme-head">互聯網/平台 <span class="bench" data-pct="0.60">恒生科技 +0.60%</span></div>
+      <div class="chip-row">
+        <span class="chip" data-pct="0.8">騰訊控股 +0.8%</span><span class="chip" data-pct="5.8">阿里巴巴 +5.8%</span>
+        <span class="chip" data-pct="0.3">京東集團 +0.3%</span><span class="chip" data-pct="-6.0">小米集團 -6.0%</span>
+      </div>
+    </div>
+    <div class="theme">
+      <div class="theme-head">半導體/光學 <span class="bench" data-pct="5.56">成分股均值 +5.56%</span></div>
+      <div class="chip-row">
+        <span class="chip" data-pct="5.8">中芯國際 +5.8%</span><span class="chip" data-pct="5.2">舜宇光學 +5.2%</span>
+        <span class="chip" data-pct="5.7">丘鈦科技 +5.7%</span>
+      </div>
+    </div>
+    <div class="theme">
+      <div class="theme-head">金融/交易所 <span class="bench" data-pct="0.73">香港交易所 +0.73%</span></div>
+      <div class="chip-row"><span class="chip" data-pct="0.7">香港交易所 +0.7%</span></div>
+    </div>
+  </div>
+
+  <div class="legend">綠色=上漲　紅色=下跌（顏色深淺對應漲跌幅度）｜美股板塊：Select Sector SPDR ETFs（Yahoo Finance日線收盤，已核驗）｜A股板塊：申萬一級行業（漲幅/跌幅居前5，非完整11類GICS分類）｜「成分股均值」為所列個股等權平均，非官方發佈指數<br>
+  ² 該項目來源單一或未經多源交叉核驗（滬深300/創業板指僅取得本週五單日快照、無法核驗上週五基準；恒生科技指數引用新聞報導累計漲幅反推）</div>
+  <div class="pagefoot"><span>Weekly Market Wrap | Steven學長</span><span>- 1 -</span><span>2026-08-09</span></div>
+</div>
+
+<!-- ═══════════════ 第 2 頁 ═══════════════ -->
+<div class="page">
+  <h2 class="sec">二、上週市場總覽</h2>
+
+  <div class="macro-block"><h3>中國宏觀 &amp; 政策</h3><ul>
+    <li>本週（8/3-8/9）為7月宏觀數據公佈窗口：進出口、外匯儲備、CPI、PPI等7月數據陸續發佈；人行8月3日起開展隔夜逆回購操作（規模約3,000億元），維持銀行體系流動性充裕。</li>
+    <li>國家外匯管理局8月1日召開2026年下半年外匯管理工作交流會，部署推動貿易便利化改革、優化經常項目外匯管理措施等工作。</li>
+    <li>人民幣中間價全週基本平穩：8月3日報6.7898（調貶4個基點），8月7日報6.7904（較前一交易日調貶9個基點），週內波動幅度有限。</li>
+  </ul></div>
+
+  <div class="macro-block"><h3>美國經濟數據</h3><ul>
+    <li>7月非農就業意外下降2.3萬人（市場預期約+8萬），失業率降至4.1%；遠遜預期的就業數據成為本週美股急漲的核心催化劑，市場迅速上調9月降息押注。</li>
+    <li>8月Markit綜合PMI待公佈，市場預期服務業PMI持穩於55.2附近；下週三（8/12）7月CPI、週四（8/13）7月PPI將是9月15-16日FOMC會議前最後兩份重磅通脹數據。</li>
+    <li>就業數據疲弱推動美債收益率明顯回落，鴿派降息預期升溫是本週Nasdaq單週+5.19%、SOXX+7.60%大漲的主要驅動力。</li>
+  </ul></div>
+
+  <div class="macro-block"><h3>全球央行動態</h3><ul>
+    <li>聯儲7月維持基準利率於3.50%-3.75%不變，FOMC三位委員投票要求加息，主席Kevin Warsh強調若通脹風險上升將採取行動，但不再對外提供明確前瞻指引。</li>
+    <li>聯儲點陣圖仍預期2026年僅降息一次（12月），2027年再降息兩次；本週疲弱非農數據令市場對聯儲9月及以後降息路徑的定價明顯升溫，與官方立場出現分歧。</li>
+    <li>日本央行7月31日（上週五）維持利率1%不變；歐洲央行下次議息定於9月10日，本週無議息事件。</li>
+  </ul></div>
+
+  <div class="macro-block"><h3>地緣政治風險</h3><ul>
+    <li>中東緊張情勢明顯緩和：霍爾木茲海峽油輪通行秩序恢復正常，美伊對話取得進展，此前支撐油價的地緣風險溢價被顯著移除。</li>
+    <li>OPEC+ 8月增產18.8萬桶/日，供給端持續寬鬆化推動WTI、布蘭特雙雙跌至近5個月低點（週內WTI -8.96%、布蘭特-8.71%，跌幅居六大市場品種之首）。</li>
+    <li>市場對2026年全球原油供給過剩的預期進一步強化，能源類股（XLE -3.44%）在美股普漲週中逆勢領跌。</li>
+  </ul></div>
+
+  <div class="macro-block"><h3>產業與科技亮點</h3><ul>
+    <li>AI算力/半導體：AMD第二季營收同比+50%至115億美元，數據中心業務規模翻倍；Astera Labs（ALAB）第二季營收3.924億美元、同比+104%，帶動週內股價+7.4%；三星、SK海力士發佈「zHBM」垂直堆疊等AI記憶體架構突破，SanDisk與鎧俠推出第10代QLC NAND。</li>
+    <li>光通信：市場傳出美方擬限制中國光模塊進口草案，西方供應商Coherent（COHR）單週暴漲44.2%、Lumentum（LITE）+24.7%；A股「光模塊三傑」新易盛、中際旭創、天孚通信同步大漲，8月4日CPO概念板塊單日+6.9%、主力淨流入約428億元，天孚通信單週漲幅擴大至+34.9%。</li>
+    <li>港股科網：阿里巴巴港股週內多篇報導稱一度創2022年3月以來新高，本週五收盤較上週五累計+5.8%；騰訊控股同步走強；小米集團週內雖多次刷新歷史高位，但收盤口徑週跌-6.0%，顯示波動加劇、高位獲利了結壓力上升。</li>
+    <li>貴金屬：黃金單週+8.70%、白銀+10.78%，避險與降息預期共振下貴金屬領漲六大市場全部品種。</li>
+    <li>加密貨幣：比特幣、以太坊分別收漲+2.39%、+3.18%，走勢與美股風險偏好回升同步，但漲幅顯著落後於股票與貴金屬，反映資金更集中湧向傳統風險資產。</li>
+  </ul></div>
+
+  <div class="pagefoot"><span>Weekly Market Wrap | Steven學長</span><span>- 2 -</span><span>2026-08-09</span></div>
+</div>
+
+<!-- ═══════════════ 第 3 頁 ═══════════════ -->
+<div class="page flow cal">
+  <h2 class="sec">三、市場資金流向</h2>
+
+  <h3 class="sub">美股板塊輪動信號</h3>
+  <table>
+    <tr><th>ETF</th><th>板塊</th><th>週漲跌幅</th><th>信號</th></tr>
+    <tr><td class="c">XLK</td><td>科技</td><td class="up c">+7.20%</td><td>成長股大幅買入</td></tr>
+    <tr><td class="c">XLB</td><td>原材料</td><td class="up c">+4.82%</td><td>順週期買盤</td></tr>
+    <tr><td class="c">XLY</td><td>非必需消費</td><td class="up c">+3.25%</td><td>消費信心回升</td></tr>
+    <tr><td class="c">XLI</td><td>工業</td><td class="up c">+2.97%</td><td>溫和買盤</td></tr>
+    <tr><td class="c">XLC</td><td>通訊服務</td><td class="up c">+2.78%</td><td>成長股買入</td></tr>
+    <tr><td class="c">XLV</td><td>醫療保健</td><td class="up c">+1.93%</td><td>溫和跟漲</td></tr>
+    <tr><td class="c">XLF</td><td>金融</td><td class="up c">+1.16%</td><td>溫和跟漲</td></tr>
+    <tr><td class="c">XLP</td><td>必需消費</td><td class="up c">+0.08%</td><td>基本持平</td></tr>
+    <tr><td class="c">XLRE</td><td>房地產</td><td class="dn c">-0.20%</td><td>基本持平</td></tr>
+    <tr><td class="c">XLU</td><td>公用事業</td><td class="dn c">-1.67%</td><td>防禦性資金流出</td></tr>
+    <tr><td class="c">XLE</td><td>能源</td><td class="dn c">-3.44%</td><td>油價下跌拖累</td></tr>
+    <tr><td class="c">SOXX</td><td>半導體</td><td class="up c">+7.60%</td><td>大幅買入（弱非農催化降息預期）</td></tr>
+  </table>
+  <div class="summary"><b>輪動信號：</b>典型 Risk-on／成長股主導模式 — 科技（XLK +7.20%）、半導體（SOXX +7.60%）與原材料（XLB +4.82%）領漲，公用事業、房地產、能源等防禦/利率敏感板塊落後。誘因：7月非農意外轉負（-2.3萬）推升降息預期，疊加AMD、Astera Labs等AI硬件財報超預期，資金集中湧向成長股；能源股因OPEC+增產、油價跌至5個月低位而逆勢下跌。</div>
+
+  <h3 class="sub">A股行業資金流向（申萬一級行業週漲跌幅）</h3>
+  <table>
+    <tr><th>▲ 漲幅居前行業</th><th>週漲跌幅</th><th>▼ 跌幅居前行業</th><th>週漲跌幅</th></tr>
+    <tr><td>電子</td><td class="up c">+12.62%</td><td>銀行</td><td class="dn c">-3.70%</td></tr>
+    <tr><td>有色金屬</td><td class="up c">+10.95%</td><td>食品飲料</td><td class="dn c">-2.76%</td></tr>
+    <tr><td>機械設備</td><td class="up c">+9.71%</td><td>家用電器</td><td class="dn c">-2.14%</td></tr>
+    <tr><td>通信</td><td class="up c">+9.69%</td><td>非銀金融</td><td class="dn c">-1.61%</td></tr>
+    <tr><td>建築材料</td><td class="up c">+8.13%</td><td>美容護理</td><td class="dn c">-1.31%</td></tr>
+  </table>
+  <div class="summary"><b>A股輪動：</b>科技/成長主線全面反彈（電子、通信、機械設備領漲，CPO/光模塊、算力硬件為核心驅動），資金從銀行、食品飲料等防禦/紅利板塊流出。截至上週統計，滬深兩融餘額26,065億元，本週流出1,038億元，已連續五週淨流出、累計流出4,265億元（較峰值回落14.1%）——顯示本輪反彈更多由存量資金與情緒驅動，槓桿資金仍偏謹慎、尚未大幅跟進。</div>
+
+  <h3 class="sub">港股資金流向（南向資金，akshare 核驗）</h3>
+  <table>
+    <tr><th>日期</th><th>南向淨流入(億)</th><th>港股通(滬)</th><th>港股通(深)</th></tr>
+    <tr><td class="c">08/03</td><td class="up r">+110.31</td><td class="up r">—</td><td class="up r">—</td></tr>
+    <tr><td class="c">08/04</td><td class="up r">+25.70</td><td class="up r">—</td><td class="up r">—</td></tr>
+    <tr><td class="c">08/05</td><td class="dn r">-13.98</td><td class="dn r">—</td><td class="dn r">—</td></tr>
+    <tr><td class="c">08/06</td><td class="dn r">-14.61</td><td class="dn r">—</td><td class="dn r">—</td></tr>
+    <tr><td class="c">08/07</td><td class="dn r">-7.78</td><td class="dn r">—</td><td class="dn r">—</td></tr>
+    <tr class="total"><td class="c">合計</td><td class="up r">+99.65</td><td class="up r">+82.99</td><td class="up r">+16.66</td></tr>
+  </table>
+  <div class="summary"><b>港股資金：</b>南向資金週一（8/3）單日大幅淨流入110.31億元（阿里巴巴、騰訊等科網龍頭獲集中增持），隨後週三至週五連續三日轉為淨流出，但全週仍實現淨流入99.65億元；分結構看，滬市貢獻主要增量（+82.99億），深市貢獻+16.66億，顯示資金集中於大盤藍籌與核心科網標的。</div>
+
+  <h2 class="sec">四、本週重要事項與經濟事件關注焦點</h2>
+  <table>
+    <tr><th style="width:9%">日期</th><th style="width:31%">宏觀數據</th><th style="width:16%">央行</th><th style="width:24%">財報</th><th style="width:20%">企業/其他</th></tr>
+    <tr><td class="day">週一 8/10</td><td>—</td><td>—</td><td>IonQ、Joby Aviation、SoundHound AI</td><td>—</td></tr>
+    <tr><td class="day">週二 8/11</td><td>—</td><td>澳洲聯儲（RBA）利率決議</td><td>DoorDash、D-Wave Quantum、Rigetti Computing</td><td>—</td></tr>
+    <tr><td class="day">週三 8/12</td><td>美國7月CPI（FOMC前關鍵通脹數據）；德國HICP終值</td><td>—</td><td>Datadog、Unity Software、Coherent（COHR）</td><td>—</td></tr>
+    <tr><td class="day">週四 8/13</td><td>美國7月PPI</td><td>—</td><td>Cloudflare、Airbnb、Roku、Warner Bros. Discovery、Keurig Dr Pepper</td><td>—</td></tr>
+    <tr><td class="day">週五 8/14</td><td>歐元區Q2 GDP修正值、工業產出</td><td>—</td><td>MetLife、Expedia Group、Zoetis、ResMed、Republic Services、DraftKings</td><td>—</td></tr>
+  </table>
+
+  <h3 class="sub">關鍵風險提示</h3>
+  <ul class="risks">
+    <li><b>①</b> 週三美國7月CPI公佈 — 9月FOMC前最重要通脹讀數，市場剛因弱非農大幅上調降息押注，若通脹超預期反彈，恐逆轉本週風險偏好回升行情、引發成長股獲利了結。</li>
+    <li><b>②</b> 光通信板塊本週暴漲後迎業績驗證：Coherent（COHR）週三（8/12）公佈財報，若指引不及市場對「進口限制受益」的樂觀定價，COHR/LITE/A股光模塊板塊可能出現劇烈回調。</li>
+    <li><b>③</b> 滬深兩融餘額連續五週淨流出（累計-4,265億元），本輪A股反彈缺乏槓桿資金確認，若增量資金未能持續接力，反彈的持續性存疑。</li>
+    <li><b>④</b> OPEC+持續增產疊加中東地緣風險溢價消退，WTI、布蘭特雙雙跌至近5個月低位，需關注能源股盈利與通脹預期的負反饋是否擴散。</li>
+    <li><b>⑤</b> 聯儲9月15-16日議息前進入政策真空期，鴿派市場定價（源自弱就業數據）與偏鷹派官員表態（7月三位委員投票要求加息）之間的分歧可能放大波動。</li>
+  </ul>
+
+  <div class="src">數據來源與核驗說明：美股/港股主要指數、Select Sector SPDR ETF、個股及商品/外匯/加密貨幣價格均採用Yahoo Finance Chart API日線收盤數據（interval=1d，以時間戳精確比對本週五2026-08-07與上週五2026-07-31收盤價，核驗日2026-08-09）；S&amp;P 500、恒生指數、恒生國企、深證成指、上證指數已與新聞報導交叉核驗、誤差在0.1個百分點以內。A股個股與港股個股代碼採用技能內建對照表，避免同名不同股風險。南向資金採用akshare stock_hsgt_hist_em接口直接獲取，未經二次估算。申萬行業數據、中國宏觀/美國經濟/央行/地緣政治等文字內容來自WebSearch多源新聞報導（東方財富、新浪財經、21財經、Bloomberg、CNBC、Kiplinger等）。滬深300／創業板指僅取得本週五單日快照、無法核驗上週五基準，已標註²；中證新能源、恒生地產指數數據暫不可得；恒生科技指數採用新聞報導累計漲跌幅反推上週五基準，已標註²。<br>
+  免責聲明：本報告由 AI 自動生成，僅供信息參考，不構成投資建議。市場有風險，投資需謹慎，請獨立判斷。</div>
+
+  <div class="pagefoot"><span>Weekly Market Wrap | Steven學長</span><span>- 3 -</span><span>2026-08-09</span></div>
+</div>
+
+<script>
+// 熱力圖着色：依漲跌幅大小決定顏色深淺（±8% 飽和）
+document.querySelectorAll('[data-pct]').forEach(el => {
+  const p = parseFloat(el.dataset.pct);
+  if (isNaN(p)) return;
+  const a = Math.min(Math.abs(p) / 8, 1);
+  let bg, fg;
+  if (p >= 0) {
+    bg = 'hsl(146, 52%, ' + (90 - a * 56) + '%)';
+  } else {
+    bg = 'hsl(8, 60%, ' + (92 - a * 50) + '%)';
+  }
+  fg = Math.abs(p) > 2.2 ? '#ffffff' : '#222222';
+  el.style.background = bg;
+  el.style.color = fg;
+});
+</script>
+</body>
+</html>
