@@ -88,5 +88,10 @@
     "week": "2026-W40",
     "period": "2026.09.28—10.02",
     "file": "reports/2026-W40.html"
+  },
+  {
+    "week": "2026-W41",
+    "period": "2026.10.05—10.09",
+    "file": "reports/2026-W41.html"
   }
 ]
