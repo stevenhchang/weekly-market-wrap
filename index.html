@@ -94,8 +94,11 @@
   <a href="https://github.com/stevenhchang/weekly-market-wrap">GitHub Repo</a>
 </div>
 <script>
-  fetch('reports.json')
-    .then(r => r.json())
+  fetch('reports.json?t=' + Date.now(), { cache: 'no-store' })
+    .then(r => {
+      if (!r.ok) throw new Error('無法載入報告目錄');
+      return r.json();
+    })
     .then(reports => {
       const list = document.getElementById('list');
       const empty = document.getElementById('empty');
